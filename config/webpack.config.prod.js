@@ -344,6 +344,24 @@ module.exports = {
     new ExtractTextPlugin({
       filename: cssFilename,
     }),
+    new webpack.HashedModuleIdsPlugin(),
+    new webpack.optimize.CommonsChunkPlugin({
+          name: 'vendor',
+          minChunks: function (module, count) {
+              // any required modules inside node_modules are extracted to vendor
+              return (
+                  module.resource &&
+                  /\.js$/.test(module.resource) &&
+                  module.resource.indexOf(
+                      path.join(__dirname, '../node_modules')
+                  ) === 0
+              )
+          }
+      }),
+    new webpack.optimize.CommonsChunkPlugin({
+          name: 'manifest',
+          chunks: ['vendor']
+      }),
     // Generate a manifest file which contains a mapping of all asset filenames
     // to their corresponding output file so that tools can pick it up without
     // having to parse `index.html`.
@@ -385,7 +403,7 @@ module.exports = {
     // solution that requires the user to opt into importing specific locales.
     // https://github.com/jmblog/how-to-optimize-momentjs-with-webpack
     // You can remove this if you don't use Moment.js:
-    new webpack.IgnorePlugin(/^\.\/locale$/, /moment$/),
+    new webpack.IgnorePlugin(/^\.\/locale$/, /moment$/)
   ],
   // Some libraries import Node modules but don't use them in the browser.
   // Tell Webpack to provide empty mocks for them so importing them works.
