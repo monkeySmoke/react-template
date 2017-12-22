@@ -1,43 +1,43 @@
-import {createStore, applyMiddleware, compose} from 'redux'
-import {routerMiddleware} from 'react-router-redux'
-import createHashHistory from 'history/createHashHistory'
-import createSagaMiddleware from 'redux-saga'
+import { createStore, applyMiddleware, compose } from 'redux';
+import { routerMiddleware } from 'react-router-redux';
+import createHashHistory from 'history/createHashHistory';
+import createSagaMiddleware from 'redux-saga';
 
-import rootReducer from '../reducers'
-import rootSaga from '../sagas'
+import rootReducer from '../reducers';
+import rootSaga from '../sagas';
 
 export const history = createHashHistory({
-    basename: '',
-    hashType: 'slash'
-})
-const sagaMiddleware = createSagaMiddleware()
+  basename: '',
+  hashType: 'slash',
+});
+const sagaMiddleware = createSagaMiddleware();
 
-const initialState = {}
-const enhancers = []
+const initialState = {};
+const enhancers = [];
 const middleware = [
-    sagaMiddleware,
-    routerMiddleware(history)
-]
+  sagaMiddleware,
+  routerMiddleware(history),
+];
 
 if (process.env.NODE_ENV === 'development') {
-    const devToolsExtension = window.devToolsExtension;
+  const { devToolsExtension } = window.devToolsExtension;
 
-    if (typeof devToolsExtension === 'function') {
-        enhancers.push(devToolsExtension());
-    }
+  if (typeof devToolsExtension === 'function') {
+    enhancers.push(devToolsExtension());
+  }
 }
 
 const composedEnhancers = compose(
-    applyMiddleware(...middleware),
-    ...enhancers
-)
+  applyMiddleware(...middleware),
+  ...enhancers,
+);
 
 const store = createStore(
-    rootReducer,
-    initialState,
-    composedEnhancers
-)
+  rootReducer,
+  initialState,
+  composedEnhancers,
+);
 
-sagaMiddleware.run(rootSaga)
+sagaMiddleware.run(rootSaga);
 
-export default store
+export default store;

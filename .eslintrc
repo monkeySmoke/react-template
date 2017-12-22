@@ -1,0 +1,23 @@
+{
+  "extends": "airbnb",
+  "env": {
+    "browser": true,
+    "jest": true,
+    "node": true
+  },
+  "globals": {
+    "window": true,
+    "document": true
+  },
+  "parser": "babel-eslint",
+  "rules": {
+    "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
+    "react/prefer-stateless-function": [1, { "ignorePureComponents": true }],
+    "import/no-named-as-default": 0,
+    "import/no-named-as-default-member": 0,
+    "react/no-did-mount-set-state": 0
+  },
+  "plugins": [
+    "react"
+  ]
+}

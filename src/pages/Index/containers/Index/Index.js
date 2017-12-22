@@ -4,7 +4,7 @@ export default class Test extends Component {
   render() {
     return (
       <div>
-                this is test
+                this is Index
       </div>
     );
   }

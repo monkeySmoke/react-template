@@ -1,2 +1,3 @@
-import Test from './containers/Test/Test'
-export default Test
+import Test from './containers/Test/Test';
+
+export default Test;
