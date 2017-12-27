@@ -15,7 +15,8 @@
     "react/prefer-stateless-function": [1, { "ignorePureComponents": true }],
     "import/no-named-as-default": 0,
     "import/no-named-as-default-member": 0,
-    "react/no-did-mount-set-state": 0
+    "react/no-did-mount-set-state": 0,
+    "react/require-default-props": 0
   },
   "plugins": [
     "react"

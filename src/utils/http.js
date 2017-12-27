@@ -5,7 +5,6 @@ import axios from 'axios';
 import { message } from 'antd';
 import nprogress from 'nprogress/nprogress.js';
 
-window.$HttpPendingList = []
 let bol = ''
 bol === 'mock' ? axios.defaults.baseURL = 'http://rap.xdbigdata.com/mockjsdata/30' : axios.defaults.baseURL = ''
 axios.interceptors.request.use(function (config) {

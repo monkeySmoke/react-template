@@ -1,5 +1,5 @@
-export function _isType (t) {
-    return Object.prototype.toString.call(t).slice(8, -1).toLowerCase()
+export function _isType (v) {
+    return v === undefined ? 'undefined' : v === null ? 'null' : v.constructor.name.toLowerCase();
 }
 
 export function _saveLocalStorage (key, value) {
