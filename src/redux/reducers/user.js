@@ -1,4 +1,6 @@
-export const types = {};
+export const types = {
+  CURRENT_USER: 'USER/CURRENT_USER',
+};
 export const initialState = {
   userName: 'test',
   role: null,

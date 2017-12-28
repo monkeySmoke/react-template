@@ -1,2 +1,8 @@
 /src/registerServiceWorker.js
 /src/utils
+/mock
+/config
+/build
+/public
+/script
+GruntFile.js

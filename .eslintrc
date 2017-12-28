@@ -16,7 +16,9 @@
     "import/no-named-as-default": 0,
     "import/no-named-as-default-member": 0,
     "react/no-did-mount-set-state": 0,
-    "react/require-default-props": 0
+    "react/require-default-props": 0,
+    "import/extensions": 0,
+    "import/no-unresolved": 0,
   },
   "plugins": [
     "react"
