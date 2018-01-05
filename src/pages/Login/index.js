@@ -1,3 +1,3 @@
-import Login from './container';
+import Login from './Container';
 
 export default Login;

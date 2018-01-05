@@ -1,8 +1,10 @@
 import { combineReducers } from 'redux';
 import { routerReducer } from 'react-router-redux';
-import userReducer from './user';
+import indexReducer from '../../pages/Index/redux';
+import loginReducer from '../../pages/Login/redux';
 
 export default combineReducers({
   routing: routerReducer,
-  user: userReducer,
+  index: indexReducer,
+  login: loginReducer,
 });

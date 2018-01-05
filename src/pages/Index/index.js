@@ -1,3 +1,3 @@
-import Index from './container';
+import Index from './Container';
 
 export default Index;

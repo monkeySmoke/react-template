@@ -1,12 +1,10 @@
 {
   "/api/login": {
-    "get": {
+    "post": {
       "data": {
         "status": true,
         "message": 1,
-        "data": {
-          "text": "这是一个get请求"
-        }
+        "data": true
       }
     }
   }

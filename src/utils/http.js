@@ -25,7 +25,7 @@ axios.interceptors.response.use(function (response) {
         message.error(response.data.message ? response.data.message : '未知错误')
     }
     nprogress.done()
-    return response
+    return response.data
 }, function (error) {
     message.error(error.response.data.message ? error.response.data.message : '未知错误')
     nprogress.done()

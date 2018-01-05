@@ -11,12 +11,14 @@ class NormalLoginForm extends Component {
         validateFields: PropTypes.func,
         getFieldDecorator: PropTypes.func,
       }),
+      loginAction: PropTypes.func,
     }
     handleSubmit = (e) => {
       e.preventDefault();
+      const { loginAction } = this.props;
       this.props.form.validateFields((err, values) => {
         if (!err) {
-          console.log('Received values of form: ', values);
+          loginAction(values);
         }
       });
     }
